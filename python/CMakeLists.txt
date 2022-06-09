@@ -1,6 +1,17 @@
 find_package(gtwrap)
 
-set(interface_files ${PROJECT_SOURCE_DIR}/cpp/${PROJECT_NAME}.h)
+set(PROJECT_MODULE_NAME "dcsam")
+
+set(interface_files ${PROJECT_SOURCE_DIR}/src/${PROJECT_NAME}.i)
+
+set(DCSAM_PYTHON_BUILD_DIRECTORY ${PROJECT_BINARY_DIR}/python)
+
+# Set the path for the DCSAM python module
+set(DCSAM_MODULE_PATH ${DCSAM_PYTHON_BUILD_DIRECTORY}/dcsam)
+
+# Copy all python files to build folder.
+copy_directory("${CMAKE_CURRENT_SOURCE_DIR}/dcsam"
+        "${DCSAM_MODULE_PATH}")
 
 pybind_wrap(${PROJECT_NAME}_py # target
             "${interface_files}" # list of interface header files
@@ -8,8 +19,8 @@ pybind_wrap(${PROJECT_NAME}_py # target
             "${PROJECT_NAME}" # module_name
             "${PROJECT_MODULE_NAME}" # top namespace in the cpp file e.g. gtsam
             "${ignore}" # ignore classes
-            ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.tpl # the wrapping template file
+            ${PROJECT_SOURCE_DIR}/python/dcsam/${PROJECT_NAME}.tpl # the wrapping template file
             ${PROJECT_NAME} # libs
-            "${PROJECT_NAME}" # dependencies
+            "${PROJECT_NAME};gtsam" # dependencies
             ON # use boost
             )
