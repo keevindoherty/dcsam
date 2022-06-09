@@ -1,0 +1,53 @@
+"""Setup file to install the DCSAM package."""
+
+try:
+    from setuptools import setup, find_packages
+except ImportError:
+    from distutils.core import setup, find_packages
+
+packages = find_packages(where=".")
+print("PACKAGES: ", packages)
+
+package_data = {
+    '': [
+        "./*.so",
+        "./*.dll",
+        "Data/*"  # Add the data files to the package
+        "Data/**/*"  # Add the data files in subdirectories
+    ]
+}
+
+# Cleaner to read in the contents rather than copy them over.
+readme_contents = open("${DCSAM_SOURCE_DIR}/README.md").read()
+
+setup(
+    name='dcsam',
+    description='Discrete-Continuous Smoothing And Mapping library',
+    url='https://marinerobotics.mit.edu/dcsam/',
+    version='1.0',  # https://www.python.org/dev/peps/pep-0440/
+    author='Kevin Dohertyet. al.',
+    author_email='kdoherty@mit.edu',
+    license='MIT license',
+    keywords='slam sam robotics localization mapping optimization',
+    long_description_content_type='text/markdown',
+    long_description=readme_contents,
+    # https://pypi.org/pypi?%3Aaction=list_classifiers
+    classifiers=[
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Education',
+        'Intended Audience :: Developers',
+        'Intended Audience :: Science/Research',
+        'Operating System :: MacOS',
+        'Operating System :: Microsoft :: Windows',
+        'Operating System :: POSIX',
+        'License :: OSI Approved :: BSD License',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 3',
+    ],
+    packages=packages,
+    include_package_data=True,
+    package_data=package_data,
+    test_suite="gtsam.tests",
+    install_requires=open("${DCSAM_SOURCE_DIR}/python/requirements.txt").readlines(),
+    zip_safe=False,
+)

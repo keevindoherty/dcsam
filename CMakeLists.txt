@@ -8,6 +8,9 @@ add_compile_options(-Wall -Wpedantic -Wextra)
 # Add option to enable testing
 option(ENABLE_TESTS "Enable tests" OFF)
 
+# Add option to build Python
+option(DCSAM_BUILD_PYTHON "Build Python" OFF)
+
 # External package dependencies.
 find_package(GTSAM 4.1 REQUIRED)
 find_package(Eigen3 3.3 REQUIRED)
@@ -50,6 +53,13 @@ target_link_libraries(dcsam PUBLIC ${DCSAM_LIBS})
 # Make library accessible to other cmake projects
 export(PACKAGE dcsam)
 export(TARGETS dcsam FILE dcsamConfig.cmake)
+
+# Inlcude Python
+if (${DCSAM_BUILD_PYTHON})
+  message(STATUS "Building Python bindings")
+  add_subdirectory(python)
+endif()
+  
 
 # Include unit tests directory to the project.
 if (${ENABLE_TESTS})
