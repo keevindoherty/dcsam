@@ -115,26 +115,26 @@ $(document).ready(function(){initNavTree('_hybrid_factor_graph_8h_source.html','
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> NonlinearFactorType&gt;</div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classdcsam_1_1_hybrid_factor_graph.html#a0624d36b37b9119a7e8349bd6da5100e">   38</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classdcsam_1_1_hybrid_factor_graph.html#a0624d36b37b9119a7e8349bd6da5100e">push_nonlinear</a>(<span class="keyword">const</span> NonlinearFactorType &amp;nonlinearFactor) {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classdcsam_1_1_hybrid_factor_graph.html#aaa4bf37c0124faed537c06d44853b146">nonlinearGraph_</a>.push_back(</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        boost::make_shared&lt;NonlinearFactorType&gt;(nonlinearFactor));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::make_shared&lt;NonlinearFactorType&gt;(nonlinearFactor));</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classdcsam_1_1_hybrid_factor_graph.html#a0624d36b37b9119a7e8349bd6da5100e">push_nonlinear</a>(</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      boost::shared_ptr&lt;gtsam::NonlinearFactor&gt; nonlinearFactor);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      std::shared_ptr&lt;gtsam::NonlinearFactor&gt; nonlinearFactor);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> DiscreteFactorType&gt;</div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classdcsam_1_1_hybrid_factor_graph.html#ac49da072ad3cf5b9290a9b63956b0228">   55</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classdcsam_1_1_hybrid_factor_graph.html#ac49da072ad3cf5b9290a9b63956b0228">push_discrete</a>(<span class="keyword">const</span> DiscreteFactorType &amp;discreteFactor) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classdcsam_1_1_hybrid_factor_graph.html#a0a563f06d3403bb8b895035401f1e444">discreteGraph_</a>.push_back(</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        boost::make_shared&lt;DiscreteFactorType&gt;(discreteFactor));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        std::make_shared&lt;DiscreteFactorType&gt;(discreteFactor));</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classdcsam_1_1_hybrid_factor_graph.html#ac49da072ad3cf5b9290a9b63956b0228">push_discrete</a>(boost::shared_ptr&lt;gtsam::DiscreteFactor&gt; discreteFactor);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classdcsam_1_1_hybrid_factor_graph.html#ac49da072ad3cf5b9290a9b63956b0228">push_discrete</a>(std::shared_ptr&lt;gtsam::DiscreteFactor&gt; discreteFactor);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> DCFactorType&gt;</div>
 <div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classdcsam_1_1_hybrid_factor_graph.html#acb8613a7bcd25d3970080a9628a2e375">   71</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classdcsam_1_1_hybrid_factor_graph.html#acb8613a7bcd25d3970080a9628a2e375">push_dc</a>(<span class="keyword">const</span> DCFactorType &amp;dcFactor) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classdcsam_1_1_hybrid_factor_graph.html#aeeb4d2dc8eaf32577f8b6b6673a32537">dcGraph_</a>.push_back(boost::make_shared&lt;DCFactorType&gt;(dcFactor));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classdcsam_1_1_hybrid_factor_graph.html#aeeb4d2dc8eaf32577f8b6b6673a32537">dcGraph_</a>.push_back(std::make_shared&lt;DCFactorType&gt;(dcFactor));</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classdcsam_1_1_hybrid_factor_graph.html#acb8613a7bcd25d3970080a9628a2e375">push_dc</a>(boost::shared_ptr&lt;DCFactor&gt; dcFactor);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classdcsam_1_1_hybrid_factor_graph.html#acb8613a7bcd25d3970080a9628a2e375">push_dc</a>(std::shared_ptr&lt;DCFactor&gt; dcFactor);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classdcsam_1_1_hybrid_factor_graph.html#ad169cba11b55f8ff58c3ea66f8c905b2">print</a>(<span class="keyword">const</span> std::string &amp;str = <span class="stringliteral">&quot;HybridFactorGraph&quot;</span>,</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;             <span class="keyword">const</span> gtsam::KeyFormatter &amp;keyFormatter =</div>

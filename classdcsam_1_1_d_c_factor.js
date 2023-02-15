@@ -11,7 +11,7 @@ var classdcsam_1_1_d_c_factor =
     [ "equals", "classdcsam_1_1_d_c_factor.html#aca9adc2d11e50919d6fdf528e787a623", null ],
     [ "error", "classdcsam_1_1_d_c_factor.html#aec35587323d45f8b717301e010f02011", null ],
     [ "evalProbs", "classdcsam_1_1_d_c_factor.html#a1b45b85febf80c8f6dfb20e8676c855a", null ],
-    [ "linearize", "classdcsam_1_1_d_c_factor.html#a0086d6fefc33865a27056b0918a66134", null ],
+    [ "linearize", "classdcsam_1_1_d_c_factor.html#a8f9901f8342b9b32a9fb965a9081b31c", null ],
     [ "logNormalizingConstant", "classdcsam_1_1_d_c_factor.html#a9b8cc804a8195a2f10dd14346929e5f6", null ],
     [ "nonlinearFactorLogNormalizingConstant", "classdcsam_1_1_d_c_factor.html#ab287efef887e57d40eb3d9e21af88d3d", null ],
     [ "operator=", "classdcsam_1_1_d_c_factor.html#a2377403900079cdb934e8ab836ed5c64", null ],

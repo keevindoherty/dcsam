@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('_d_c_factor_8h_source.html',''); initR
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="keyword">const</span> gtsam::Values&amp; continuousVals,</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <span class="keyword">const</span> gtsam::DiscreteFactor::Values&amp; discreteVals) <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classdcsam_1_1_d_c_factor.html#a0086d6fefc33865a27056b0918a66134">  102</a></span>&#160;  <span class="keyword">virtual</span> boost::shared_ptr&lt;gtsam::GaussianFactor&gt; <a class="code" href="classdcsam_1_1_d_c_factor.html#a0086d6fefc33865a27056b0918a66134">linearize</a>(</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classdcsam_1_1_d_c_factor.html#a8f9901f8342b9b32a9fb965a9081b31c">  102</a></span>&#160;  <span class="keyword">virtual</span> std::shared_ptr&lt;gtsam::GaussianFactor&gt; <a class="code" href="classdcsam_1_1_d_c_factor.html#a8f9901f8342b9b32a9fb965a9081b31c">linearize</a>(</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="keyword">const</span> gtsam::Values&amp; continuousVals,</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="keyword">const</span> <a class="code" href="namespacedcsam.html#a214120b170446ee196b73508f1462d01">DiscreteValues</a>&amp; discreteVals) <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
@@ -177,22 +177,22 @@ $(document).ready(function(){initNavTree('_d_c_factor_8h_source.html',''); initR
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    gtsam::Matrix infoMat;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// NOTE: This is sloppy, is there a cleaner way?</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    boost::shared_ptr&lt;NonlinearFactorType&gt; fPtr =</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        boost::make_shared&lt;NonlinearFactorType&gt;(factor);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    boost::shared_ptr&lt;NonlinearFactorType&gt; factorPtr(fPtr);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    std::shared_ptr&lt;NonlinearFactorType&gt; fPtr =</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        std::make_shared&lt;NonlinearFactorType&gt;(factor);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    std::shared_ptr&lt;NonlinearFactorType&gt; factorPtr(fPtr);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">// If this is a NoiseModelFactor, we&#39;ll use its noiseModel to</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="comment">// otherwise noiseModelFactor will be nullptr</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    boost::shared_ptr&lt;gtsam::NoiseModelFactor&gt; noiseModelFactor =</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        boost::dynamic_pointer_cast&lt;gtsam::NoiseModelFactor&gt;(factorPtr);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    std::shared_ptr&lt;gtsam::NoiseModelFactor&gt; noiseModelFactor =</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        std::dynamic_pointer_cast&lt;gtsam::NoiseModelFactor&gt;(factorPtr);</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">if</span> (noiseModelFactor) {</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      <span class="comment">// If dynamic cast to NoiseModelFactor succeeded, see if the noise model</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      <span class="comment">// is Gaussian</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      gtsam::noiseModel::Base::shared_ptr noiseModel =</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;          noiseModelFactor-&gt;noiseModel();</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      boost::shared_ptr&lt;gtsam::noiseModel::Gaussian&gt; gaussianNoiseModel =</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;          boost::dynamic_pointer_cast&lt;gtsam::noiseModel::Gaussian&gt;(noiseModel);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      std::shared_ptr&lt;gtsam::noiseModel::Gaussian&gt; gaussianNoiseModel =</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;          std::dynamic_pointer_cast&lt;gtsam::noiseModel::Gaussian&gt;(noiseModel);</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      <span class="keywordflow">if</span> (gaussianNoiseModel) {</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="comment">// If the noise model is Gaussian, retrieve the information matrix</span></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        infoMat = gaussianNoiseModel-&gt;information();</div>
@@ -201,7 +201,7 @@ $(document).ready(function(){initNavTree('_d_c_factor_8h_source.html',''); initR
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="comment">// something with a normalized noise model</span></div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="comment">// TODO(kevin): does this make sense to do? I think maybe not in</span></div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="comment">// general? Should we just yell at the user?</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        boost::shared_ptr&lt;gtsam::GaussianFactor&gt; gaussianFactor =</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        std::shared_ptr&lt;gtsam::GaussianFactor&gt; gaussianFactor =</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            factor.linearize(values);</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        infoMat = gaussianFactor-&gt;information();</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      }</div>
@@ -236,7 +236,6 @@ $(document).ready(function(){initNavTree('_d_c_factor_8h_source.html',''); initR
 <div class="ttc" id="a_d_c_s_a_m__types_8h_html"><div class="ttname"><a href="_d_c_s_a_m__types_8h.html">DCSAM_types.h</a></div><div class="ttdoc">Some convenient types for DCSAM.</div></div>
 <div class="ttc" id="a_d_c_s_a_m__utils_8h_html"><div class="ttname"><a href="_d_c_s_a_m__utils_8h.html">DCSAM_utils.h</a></div><div class="ttdoc">Some utilities for DCSAM.</div></div>
 <div class="ttc" id="aclassdcsam_1_1_d_c_factor_html"><div class="ttname"><a href="classdcsam_1_1_d_c_factor.html">dcsam::DCFactor</a></div><div class="ttdoc">Abstract class implementing a discrete-continuous factor.</div><div class="ttdef"><b>Definition:</b> DCFactor.h:33</div></div>
-<div class="ttc" id="aclassdcsam_1_1_d_c_factor_html_a0086d6fefc33865a27056b0918a66134"><div class="ttname"><a href="classdcsam_1_1_d_c_factor.html#a0086d6fefc33865a27056b0918a66134">dcsam::DCFactor::linearize</a></div><div class="ttdeci">virtual boost::shared_ptr&lt; gtsam::GaussianFactor &gt; linearize(const gtsam::Values &amp;continuousVals, const DiscreteValues &amp;discreteVals) const =0</div></div>
 <div class="ttc" id="aclassdcsam_1_1_d_c_factor_html_a17a329412eda0f0f7c26e54150e9117e"><div class="ttname"><a href="classdcsam_1_1_d_c_factor.html#a17a329412eda0f0f7c26e54150e9117e">dcsam::DCFactor::discreteKeys_</a></div><div class="ttdeci">gtsam::DiscreteKeys discreteKeys_</div><div class="ttdef"><b>Definition:</b> DCFactor.h:36</div></div>
 <div class="ttc" id="aclassdcsam_1_1_d_c_factor_html_a1b45b85febf80c8f6dfb20e8676c855a"><div class="ttname"><a href="classdcsam_1_1_d_c_factor.html#a1b45b85febf80c8f6dfb20e8676c855a">dcsam::DCFactor::evalProbs</a></div><div class="ttdeci">std::vector&lt; double &gt; evalProbs(const gtsam::DiscreteKey &amp;dk, const gtsam::Values &amp;continuousVals) const</div><div class="ttdef"><b>Definition:</b> DCFactor.h:254</div></div>
 <div class="ttc" id="aclassdcsam_1_1_d_c_factor_html_a2377403900079cdb934e8ab836ed5c64"><div class="ttname"><a href="classdcsam_1_1_d_c_factor.html#a2377403900079cdb934e8ab836ed5c64">dcsam::DCFactor::operator=</a></div><div class="ttdeci">DCFactor &amp; operator=(const DCFactor &amp;rhs)</div><div class="ttdef"><b>Definition:</b> DCFactor.h:58</div></div>
@@ -244,6 +243,7 @@ $(document).ready(function(){initNavTree('_d_c_factor_8h_source.html',''); initR
 <div class="ttc" id="aclassdcsam_1_1_d_c_factor_html_a3650aa5d79d53ac43bcabeb55672008d"><div class="ttname"><a href="classdcsam_1_1_d_c_factor.html#a3650aa5d79d53ac43bcabeb55672008d">dcsam::DCFactor::discreteKeys</a></div><div class="ttdeci">gtsam::DiscreteKeys discreteKeys() const</div><div class="ttdef"><b>Definition:</b> DCFactor.h:135</div></div>
 <div class="ttc" id="aclassdcsam_1_1_d_c_factor_html_a4077b9034414686095824a32a570c93e"><div class="ttname"><a href="classdcsam_1_1_d_c_factor.html#a4077b9034414686095824a32a570c93e">dcsam::DCFactor::dim</a></div><div class="ttdeci">virtual size_t dim() const =0</div></div>
 <div class="ttc" id="aclassdcsam_1_1_d_c_factor_html_a56f1a939dd9c4f055673c49d0e86990d"><div class="ttname"><a href="classdcsam_1_1_d_c_factor.html#a56f1a939dd9c4f055673c49d0e86990d">dcsam::DCFactor::DCFactor</a></div><div class="ttdeci">DCFactor(const gtsam::KeyVector &amp;continuousKeys, const gtsam::DiscreteKeys &amp;discreteKeys)</div><div class="ttdef"><b>Definition:</b> DCFactor.h:50</div></div>
+<div class="ttc" id="aclassdcsam_1_1_d_c_factor_html_a8f9901f8342b9b32a9fb965a9081b31c"><div class="ttname"><a href="classdcsam_1_1_d_c_factor.html#a8f9901f8342b9b32a9fb965a9081b31c">dcsam::DCFactor::linearize</a></div><div class="ttdeci">virtual std::shared_ptr&lt; gtsam::GaussianFactor &gt; linearize(const gtsam::Values &amp;continuousVals, const DiscreteValues &amp;discreteVals) const =0</div></div>
 <div class="ttc" id="aclassdcsam_1_1_d_c_factor_html_a94936467752187fc2b8b166fb045f14b"><div class="ttname"><a href="classdcsam_1_1_d_c_factor.html#a94936467752187fc2b8b166fb045f14b">dcsam::DCFactor::conditionalTimes</a></div><div class="ttdeci">gtsam::DecisionTreeFactor conditionalTimes(const gtsam::DecisionTreeFactor &amp;f, const gtsam::Values &amp;continuousVals, const DiscreteValues &amp;discreteVals) const</div><div class="ttdef"><b>Definition:</b> DCFactor.h:280</div></div>
 <div class="ttc" id="aclassdcsam_1_1_d_c_factor_html_a96b617262686aa74ae1e5c2799977dbb"><div class="ttname"><a href="classdcsam_1_1_d_c_factor.html#a96b617262686aa74ae1e5c2799977dbb">dcsam::DCFactor::DCFactor</a></div><div class="ttdeci">DCFactor(const gtsam::DiscreteKeys &amp;discreteKeys)</div><div class="ttdef"><b>Definition:</b> DCFactor.h:55</div></div>
 <div class="ttc" id="aclassdcsam_1_1_d_c_factor_html_a9b8cc804a8195a2f10dd14346929e5f6"><div class="ttname"><a href="classdcsam_1_1_d_c_factor.html#a9b8cc804a8195a2f10dd14346929e5f6">dcsam::DCFactor::logNormalizingConstant</a></div><div class="ttdeci">virtual double logNormalizingConstant(const gtsam::Values &amp;values) const</div><div class="ttdef"><b>Definition:</b> DCFactor.h:178</div></div>

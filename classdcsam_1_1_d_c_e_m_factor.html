@@ -136,8 +136,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6e0351d6ad179d66fe25cfe8ea56919f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a585cb3e50c19559fd4fe697072fc5bcd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdcsam_1_1_d_c_e_m_factor.html#a585cb3e50c19559fd4fe697072fc5bcd">equals</a> (const <a class="el" href="classdcsam_1_1_d_c_factor.html">DCFactor</a> &amp;other, double <a class="el" href="test_d_c_s_a_m_8cpp.html#a7fe7a2d892789540ed424673579f2f35">tol</a>=1e-9) const override</td></tr>
 <tr class="separator:a585cb3e50c19559fd4fe697072fc5bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8963b253857715de530df5553b54e27"><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; gtsam::GaussianFactor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdcsam_1_1_d_c_e_m_factor.html#ac8963b253857715de530df5553b54e27">linearize</a> (const gtsam::Values &amp;continuousVals, const <a class="el" href="namespacedcsam.html#a214120b170446ee196b73508f1462d01">DiscreteValues</a> &amp;discreteVals) const override</td></tr>
-<tr class="separator:ac8963b253857715de530df5553b54e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca98f36289053de2a05b5dadb8a31323"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; gtsam::GaussianFactor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdcsam_1_1_d_c_e_m_factor.html#aca98f36289053de2a05b5dadb8a31323">linearize</a> (const gtsam::Values &amp;continuousVals, const <a class="el" href="namespacedcsam.html#a214120b170446ee196b73508f1462d01">DiscreteValues</a> &amp;discreteVals) const override</td></tr>
+<tr class="separator:aca98f36289053de2a05b5dadb8a31323"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c736e3fadb429e87f58bee334befe67"><td class="memItemLeft" align="right" valign="top">gtsam::DecisionTreeFactor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdcsam_1_1_d_c_e_m_factor.html#a4c736e3fadb429e87f58bee334befe67">toDecisionTreeFactor</a> (const gtsam::Values &amp;continuousVals, const <a class="el" href="namespacedcsam.html#a214120b170446ee196b73508f1462d01">DiscreteValues</a> &amp;discreteVals) const override</td></tr>
 <tr class="separator:a4c736e3fadb429e87f58bee334befe67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b7a600f3e3c3ce0fec243612161b9bc"><td class="memItemLeft" align="right" valign="top">gtsam::FastVector&lt; gtsam::Key &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdcsam_1_1_d_c_e_m_factor.html#a5b7a600f3e3c3ce0fec243612161b9bc">getAssociationKeys</a> (const gtsam::Values &amp;continuousVals, const <a class="el" href="namespacedcsam.html#a214120b170446ee196b73508f1462d01">DiscreteValues</a> &amp;discreteVals) const</td></tr>
@@ -607,8 +607,8 @@ template&lt;class DCFactorType &gt; </div>
 
 </div>
 </div>
-<a id="ac8963b253857715de530df5553b54e27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8963b253857715de530df5553b54e27">&#9670;&nbsp;</a></span>linearize()</h2>
+<a id="aca98f36289053de2a05b5dadb8a31323"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca98f36289053de2a05b5dadb8a31323">&#9670;&nbsp;</a></span>linearize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -619,7 +619,7 @@ template&lt;class DCFactorType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">boost::shared_ptr&lt;gtsam::GaussianFactor&gt; <a class="el" href="classdcsam_1_1_d_c_e_m_factor.html">dcsam::DCEMFactor</a>&lt; DCFactorType &gt;::linearize </td>
+          <td class="memname">std::shared_ptr&lt;gtsam::GaussianFactor&gt; <a class="el" href="classdcsam_1_1_d_c_e_m_factor.html">dcsam::DCEMFactor</a>&lt; DCFactorType &gt;::linearize </td>
           <td>(</td>
           <td class="paramtype">const gtsam::Values &amp;&#160;</td>
           <td class="paramname"><em>continuousVals</em>, </td>
@@ -652,7 +652,7 @@ template&lt;class DCFactorType &gt; </div>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classdcsam_1_1_d_c_factor.html#a0086d6fefc33865a27056b0918a66134">dcsam::DCFactor</a>.</p>
+<p>Implements <a class="el" href="classdcsam_1_1_d_c_factor.html#a8f9901f8342b9b32a9fb965a9081b31c">dcsam::DCFactor</a>.</p>
 
 </div>
 </div>

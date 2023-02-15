@@ -7,7 +7,7 @@ var classdcsam_1_1_semantic_bearing_range_factor =
     [ "dim", "classdcsam_1_1_semantic_bearing_range_factor.html#a7138ffcdd27222d04fadd9bf5bdfc883", null ],
     [ "equals", "classdcsam_1_1_semantic_bearing_range_factor.html#ac288bd8a1a46bbe42898ebaceca7f5a6", null ],
     [ "error", "classdcsam_1_1_semantic_bearing_range_factor.html#abcb0e7c9428bce94b2690a9be6b6b6af", null ],
-    [ "linearize", "classdcsam_1_1_semantic_bearing_range_factor.html#a4128da6ef4c3e21f476f13b42d9bf3ac", null ],
+    [ "linearize", "classdcsam_1_1_semantic_bearing_range_factor.html#a28432416e589afd9d0f8dbede19ec529", null ],
     [ "logNormalizingConstant", "classdcsam_1_1_semantic_bearing_range_factor.html#afe0b1fe52d96425935b0cda4ddd4558e", null ],
     [ "operator=", "classdcsam_1_1_semantic_bearing_range_factor.html#a88021f070af5a206f51cdc50c7a4330f", null ]
 ];

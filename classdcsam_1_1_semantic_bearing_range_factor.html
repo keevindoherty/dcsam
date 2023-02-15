@@ -128,8 +128,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abcb0e7c9428bce94b2690a9be6b6b6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7138ffcdd27222d04fadd9bf5bdfc883"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdcsam_1_1_semantic_bearing_range_factor.html#a7138ffcdd27222d04fadd9bf5bdfc883">dim</a> () const override</td></tr>
 <tr class="separator:a7138ffcdd27222d04fadd9bf5bdfc883"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4128da6ef4c3e21f476f13b42d9bf3ac"><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; gtsam::GaussianFactor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdcsam_1_1_semantic_bearing_range_factor.html#a4128da6ef4c3e21f476f13b42d9bf3ac">linearize</a> (const gtsam::Values &amp;continuousVals, const <a class="el" href="namespacedcsam.html#a214120b170446ee196b73508f1462d01">DiscreteValues</a> &amp;discreteVals) const override</td></tr>
-<tr class="separator:a4128da6ef4c3e21f476f13b42d9bf3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28432416e589afd9d0f8dbede19ec529"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; gtsam::GaussianFactor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdcsam_1_1_semantic_bearing_range_factor.html#a28432416e589afd9d0f8dbede19ec529">linearize</a> (const gtsam::Values &amp;continuousVals, const <a class="el" href="namespacedcsam.html#a214120b170446ee196b73508f1462d01">DiscreteValues</a> &amp;discreteVals) const override</td></tr>
+<tr class="separator:a28432416e589afd9d0f8dbede19ec529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac288bd8a1a46bbe42898ebaceca7f5a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdcsam_1_1_semantic_bearing_range_factor.html#ac288bd8a1a46bbe42898ebaceca7f5a6">equals</a> (const <a class="el" href="classdcsam_1_1_d_c_factor.html">DCFactor</a> &amp;other, double <a class="el" href="test_d_c_s_a_m_8cpp.html#a7fe7a2d892789540ed424673579f2f35">tol</a>=1e-9) const override</td></tr>
 <tr class="separator:ac288bd8a1a46bbe42898ebaceca7f5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe0b1fe52d96425935b0cda4ddd4558e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdcsam_1_1_semantic_bearing_range_factor.html#afe0b1fe52d96425935b0cda4ddd4558e">logNormalizingConstant</a> (const gtsam::Values &amp;values) const override</td></tr>
@@ -442,8 +442,8 @@ template&lt;typename PoseType , typename PointType , typename BearingType  = typ
 
 </div>
 </div>
-<a id="a4128da6ef4c3e21f476f13b42d9bf3ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4128da6ef4c3e21f476f13b42d9bf3ac">&#9670;&nbsp;</a></span>linearize()</h2>
+<a id="a28432416e589afd9d0f8dbede19ec529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28432416e589afd9d0f8dbede19ec529">&#9670;&nbsp;</a></span>linearize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -454,7 +454,7 @@ template&lt;typename PoseType , typename PointType , typename BearingType  = typ
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">boost::shared_ptr&lt;gtsam::GaussianFactor&gt; <a class="el" href="classdcsam_1_1_semantic_bearing_range_factor.html">dcsam::SemanticBearingRangeFactor</a>&lt; PoseType, PointType, BearingType, RangeType &gt;::linearize </td>
+          <td class="memname">std::shared_ptr&lt;gtsam::GaussianFactor&gt; <a class="el" href="classdcsam_1_1_semantic_bearing_range_factor.html">dcsam::SemanticBearingRangeFactor</a>&lt; PoseType, PointType, BearingType, RangeType &gt;::linearize </td>
           <td>(</td>
           <td class="paramtype">const gtsam::Values &amp;&#160;</td>
           <td class="paramname"><em>continuousVals</em>, </td>
@@ -487,7 +487,7 @@ template&lt;typename PoseType , typename PointType , typename BearingType  = typ
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classdcsam_1_1_d_c_factor.html#a0086d6fefc33865a27056b0918a66134">dcsam::DCFactor</a>.</p>
+<p>Implements <a class="el" href="classdcsam_1_1_d_c_factor.html#a8f9901f8342b9b32a9fb965a9081b31c">dcsam::DCFactor</a>.</p>
 
 </div>
 </div>
